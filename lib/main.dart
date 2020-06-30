@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:tennist_flutter/src/helper/AppConfig.dart';
-import 'package:tennist_flutter/pages/default/DefaultScreen.dart';
+import 'package:tennist_flutter/pages/BottomNaviController.dart';
 
 class MyApp extends StatelessWidget {
   final appConfiguration;
@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        initialRoute: DefaultScreen.routeName,
+        home: BottomNaviController(),
         routes: {
-          DefaultScreen.routeName: (context) => DefaultScreen(),
+          '/bottomNavi': (context) => BottomNaviController(),
         },
       ),
     );
