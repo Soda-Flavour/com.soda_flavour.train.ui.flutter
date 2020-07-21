@@ -33,21 +33,53 @@ class _BottomNaviControllerState extends State<BottomNaviController> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.filter_1),
-            title: Text('Tab 1'),
+            icon: new Image.asset(
+              'assets/images/tabbar/tennis-unselected.png',
+              scale: 1.7,
+            ),
+            activeIcon: new Image.asset(
+              'assets/images/tabbar/tennis-selected.png',
+              scale: 1.7,
+            ),
+            title: Text(
+              'Tennist',
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.filter_2),
-            title: Text('Tab 2'),
+            icon: new Image.asset(
+              'assets/images/tabbar/tennis-unselected.png',
+              scale: 1.7,
+            ),
+            activeIcon: new Image.asset(
+              'assets/images/tabbar/tennis-selected.png',
+              scale: 1.7,
+            ),
+            title: Text(
+              'Racket',
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.filter_3),
-            title: Text('Tab 3'),
+            icon: new Image.asset(
+              'assets/images/tabbar/account-unselected.png',
+              scale: 1.7,
+            ),
+            activeIcon: new Image.asset(
+              'assets/images/tabbar/account-selected.png',
+              scale: 1.7,
+            ),
+            title: Text(
+              'Mypage',
+            ),
           ),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        backgroundColor: Colors.amber[100],
+        backgroundColor: const Color(0xff141414),
+        type: BottomNavigationBarType.fixed,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
       ),
       body: PageView(
         controller: pageController,
