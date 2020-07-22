@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tennist_flutter/pages/account/FindPassword.screen.dart';
+import 'package:tennist_flutter/pages/account/LogIn.screen.dart';
+import 'package:tennist_flutter/pages/account/SignUp.screen.dart';
 import 'package:tennist_flutter/pages/tab_1/dep_1_racket_list/RacketList.screen.dart';
 import 'package:tennist_flutter/pages/tab_1/dep_2_racket_history/RacketHistory.screen.dart';
 import 'package:tennist_flutter/pages/tab_1/dep_3_user_racket_history_detail/RacketHistoryDetail.screen.dart';
@@ -40,7 +43,12 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Tennist',
-        theme: ThemeData(scaffoldBackgroundColor: const Color(0xfff9fafb)),
+        theme: ThemeData(
+          scaffoldBackgroundColor: const Color(0xfff9fafb),
+          // inputDecorationTheme: new InputDecorationTheme(
+          //   labelStyle: new TextStyle(color: Color(0xff8A94A8)),
+          // ),
+        ),
         // theme: ThemeData(
         //   // primarySwatch: Colors.blue,
         //   visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -68,6 +76,9 @@ class MyApp extends StatelessWidget {
           PhysicalInfoFormScreen.routeName: (context) =>
               PhysicalInfoFormScreen(),
           TennisInfoFormScreen.routeName: (context) => TennisInfoFormScreen(),
+          LogInScreen.routeName: (context) => LogInScreen(),
+          SignUpScreen.routeName: (context) => SignUpScreen(),
+          FindPasswordScreen.routeName: (context) => FindPasswordScreen(),
         },
       ),
     );
