@@ -3,6 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:tennist_flutter/pages/tab_3/profile/ProfileList.screen.dart';
 import 'package:tennist_flutter/pages/tab_3/manage_racket/UserRacketList.screen.dart';
 import 'package:tennist_flutter/pages/tab_3/setting/SettingList.screen.dart';
+import 'package:tennist_flutter/src/widget/DialogPopUp.widget.dart';
 import 'package:tennist_flutter/src/widget/NeedLoginPopup.dart';
 import 'package:tennist_flutter/src/helper/ApiReciver.dart';
 import 'package:tennist_flutter/src/helper/AuthHelper.dart';
@@ -225,7 +226,7 @@ class _Tab3MainScreenState extends State<Tab3MainScreen> {
           if (index == 2) {
             return GestureDetector(
               onTap: () {
-                NeedLoginPopup().showNeedLoginDialogBox(context);
+                DialogPopUpWidget().needLoginDialogBox(context);
                 // Navigator.of(context).pushNamed(ProfileListScreen.routeName);
                 print("Container was tapped");
               },

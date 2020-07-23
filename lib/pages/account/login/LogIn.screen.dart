@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:tennist_flutter/pages/account/FindPassword.screen.dart';
+import 'package:tennist_flutter/pages/account/signup/SignUp.screen.dart';
 import 'package:tennist_flutter/src/constants/Sex.dart';
 import 'package:tennist_flutter/src/provider/LoadingProvider.dart';
 
-class FindPasswordScreen extends StatefulWidget {
-  static const String routeName = '/FindPassword';
+class LogInScreen extends StatefulWidget {
+  static const String routeName = '/LogIn';
   @override
-  _FindPasswordScreenState createState() => _FindPasswordScreenState();
+  _LogInScreenState createState() => _LogInScreenState();
 }
 
-class _FindPasswordScreenState extends State<FindPasswordScreen> {
+class _LogInScreenState extends State<LogInScreen> {
   final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
 
   final TextEditingController _emailTextController =
@@ -35,16 +37,7 @@ class _FindPasswordScreenState extends State<FindPasswordScreen> {
           child: AppBar(
             elevation: 0,
             automaticallyImplyLeading: true,
-            backgroundColor: Colors.transparent,
-            title: Text(
-              '비밀번호 찾기',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                letterSpacing: 0.07,
-                color: Colors.white,
-                fontSize: 18.0,
-              ),
-            ),
+            backgroundColor: Colors.transparent, //왼쪽 화살표 뒤로 없애기
           ),
         ),
       ),
@@ -111,6 +104,35 @@ class _FindPasswordScreenState extends State<FindPasswordScreen> {
                         SizedBox(
                           height: 30,
                         ),
+                        FormBuilderTextField(
+                          attribute: "password",
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          style: TextStyle(color: const Color(0xffffffff)),
+                          decoration: InputDecoration(
+                            hintMaxLines: 1,
+                            hintText: "Password",
+                            hintStyle: TextStyle(
+                              color: const Color(0xff8A94A8),
+                            ),
+                            prefixIcon: Icon(
+                              Icons.lock,
+                              color: Color(0xff8A94A8),
+                            ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                width: 2,
+                                color: const Color(0xff8A94A8),
+                              ),
+                            ),
+                          ),
+                          validators: [
+                            FormBuilderValidators.max(20),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
                         SizedBox(
                           width: double.infinity,
                           height: 60,
@@ -120,7 +142,7 @@ class _FindPasswordScreenState extends State<FindPasswordScreen> {
                             ),
                             color: Color(0xff01a2ff),
                             child: new Text(
-                              "새로운 비밀번호 전송",
+                              "로그인",
                               style: TextStyle(
                                 color: Color(0xffffffff),
                                 fontWeight: FontWeight.w600,
@@ -135,6 +157,61 @@ class _FindPasswordScreenState extends State<FindPasswordScreen> {
                             },
                           ),
                         ),
+                        SizedBox(
+                          height: 36,
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context)
+                                    .pushNamed(FindPasswordScreen.routeName);
+                              },
+                              child: Text(
+                                "비밀번호 찾기",
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xff01a0e8),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  "아직 회원이 아니신가요?",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16.0,
+                                    color: Color(0xffffffff),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.of(context)
+                                        .pushNamed(SignUpScreen.routeName);
+                                  },
+                                  child: Text(
+                                    "회원가입하기",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16.0,
+                                      color: Color(0xff01a0e8),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        )
                       ]),
                 ),
               ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tennist_flutter/pages/account/FindPassword.screen.dart';
-import 'package:tennist_flutter/pages/account/LogIn.screen.dart';
-import 'package:tennist_flutter/pages/account/SignUp.screen.dart';
+import 'package:tennist_flutter/pages/account/login/LogIn.screen.dart';
+import 'package:tennist_flutter/pages/account/signup/SignUp.screen.dart';
 import 'package:tennist_flutter/pages/tab_1/dep_1_racket_list/RacketList.screen.dart';
 import 'package:tennist_flutter/pages/tab_1/dep_2_racket_history/RacketHistory.screen.dart';
 import 'package:tennist_flutter/pages/tab_1/dep_3_user_racket_history_detail/RacketHistoryDetail.screen.dart';
