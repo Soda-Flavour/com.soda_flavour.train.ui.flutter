@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:tennist_flutter/pages/BottomNaviController.dart';
 import 'package:tennist_flutter/pages/account/FindPassword.screen.dart';
+import 'package:tennist_flutter/pages/account/login/LogIn.provider.dart';
 import 'package:tennist_flutter/pages/account/signup/SignUp.screen.dart';
-import 'package:tennist_flutter/src/constants/Sex.dart';
+import 'package:tennist_flutter/pages/tab_3/main/Tab3Main.screen.dart';
 import 'package:tennist_flutter/src/provider/LoadingProvider.dart';
+import 'package:tennist_flutter/src/widget/DialogPopUp.widget.dart';
 
 class LogInScreen extends StatefulWidget {
   static const String routeName = '/LogIn';
@@ -47,7 +50,7 @@ class _LogInScreenState extends State<LogInScreen> {
           child: FormBuilder(
             key: _fbKey,
             initialValue: {
-              'date': DateTime.now(),
+              // 'date': DateTime.now(),
               // 'accept_terms': false,
             },
             autovalidate: true,
@@ -149,9 +152,32 @@ class _LogInScreenState extends State<LogInScreen> {
                                 fontSize: 20.0,
                               ),
                             ),
-                            onPressed: () {
+                            onPressed: () async {
                               if (_fbKey.currentState.saveAndValidate()) {
-                                print(_fbKey.currentState.value);
+                                dynamic result = await LogInProvider()
+                                    .logIn(_fbKey.currentState.value);
+
+                                if (result.status == 200) {
+                                  return DialogPopUpWidget().successDialogBox(
+                                    context,
+                                    result.message,
+                                    () =>
+                                        // Navigator.of(context).pop();
+                                        //     Navigator.popUntil(
+                                        //   context,
+                                        //   ModalRoute.withName(
+                                        //       BottomNaviController.routeName),
+                                        // ),
+                                        Navigator.of(context)
+                                            .pushNamedAndRemoveUntil(
+                                      BottomNaviController.routeName,
+                                      (route) => false,
+                                    ),
+                                  );
+                                } else {
+                                  return DialogPopUpWidget()
+                                      .errorDialogBox(context, result.message);
+                                }
                               }
                               // Navigator.of(context).pop();
                             },

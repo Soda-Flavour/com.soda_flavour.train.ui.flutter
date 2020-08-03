@@ -9,7 +9,7 @@ import 'package:tennist_flutter/pages/tab_1/dep_3_user_racket_history_detail/Rac
 import 'package:tennist_flutter/pages/tab_3/manage_racket/detail_racket/detail_history/AddUserRacketHistory.screen.dart';
 import 'package:tennist_flutter/pages/tab_3/manage_racket/detail_racket/detail_history/UserRacketHistory.screen.dart';
 import 'package:tennist_flutter/pages/tab_3/profile/ProfileList.screen.dart';
-import 'package:tennist_flutter/pages/tab_3/profile/basic_info/BasicInfoForm.screen.dart';
+import 'package:tennist_flutter/pages/tab_3/profile/basic_info/UserBasicInfoForm.screen.dart';
 import 'package:tennist_flutter/pages/tab_3/profile/physical_info/PhysicalInfoForm.screen.dart';
 import 'package:tennist_flutter/pages/tab_3/profile/tennis_info/TennisInfoForm.screen.dart';
 import 'package:tennist_flutter/pages/tab_3/manage_racket/UserRacketList.screen.dart';
@@ -72,7 +72,8 @@ class MyApp extends StatelessWidget {
           SelectRacketVersionScreen.routeName: (context) =>
               SelectRacketVersionScreen(),
           SelectRacketScreen.routeName: (context) => SelectRacketScreen(),
-          BasicInfoFormScreen.routeName: (context) => BasicInfoFormScreen(),
+          UserBasicInfoFormScreen.routeName: (context) =>
+              UserBasicInfoFormScreen(),
           PhysicalInfoFormScreen.routeName: (context) =>
               PhysicalInfoFormScreen(),
           TennisInfoFormScreen.routeName: (context) => TennisInfoFormScreen(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:tennist_flutter/pages/tab_3/profile/basic_info/BasicInfoForm.screen.dart';
+import 'package:tennist_flutter/pages/tab_3/profile/basic_info/UserBasicInfoForm.screen.dart';
 import 'package:tennist_flutter/pages/tab_3/profile/physical_info/PhysicalInfoForm.screen.dart';
 import 'package:tennist_flutter/pages/tab_3/profile/tennis_info/tennisInfoForm.screen.dart';
 import 'package:tennist_flutter/src/helper/ApiReciver.dart';
@@ -20,7 +20,7 @@ class _ProfileListScreen extends State<ProfileListScreen> {
 
   final List<String> rowTitle = <String>['기본정보', '신체사항', '플레이 스타일'];
   final List<String> rowRouteName = <String>[
-    BasicInfoFormScreen.routeName,
+    UserBasicInfoFormScreen.routeName,
     PhysicalInfoFormScreen.routeName,
     TennisInfoFormScreen.routeName
   ];

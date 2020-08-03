@@ -16,11 +16,6 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
 
-  final TextEditingController _emailTextController =
-      new TextEditingController();
-  final TextEditingController _passwordTextController =
-      new TextEditingController();
-
   _dismissKeyboard(BuildContext context) {
     FocusScope.of(context).requestFocus(new FocusNode());
   }
@@ -223,11 +218,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 dynamic result = await SignUpProvider()
                                     .signUp(_fbKey.currentState.value);
 
-                                print("//////////////");
-                                print(result);
-
                                 if (result.status == 200) {
-                                  print("11111");
                                   return DialogPopUpWidget().successDialogBox(
                                       context,
                                       result.message,
@@ -238,7 +229,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                               ModalRoute.withName(
                                                   LogInScreen.routeName)));
                                 } else {
-                                  print("22222222");
                                   return DialogPopUpWidget()
                                       .errorDialogBox(context, result.message);
                                 }

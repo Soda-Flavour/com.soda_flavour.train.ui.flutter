@@ -23,7 +23,7 @@ class _BottomNaviControllerState extends State<BottomNaviController> {
 
   final List<Widget> _widgets = <Widget>[
     Tab1MainScreen(),
-    Tab2MainScreen(),
+    // Tab2MainScreen(),
     Tab3MainScreen()
   ];
 
@@ -45,19 +45,19 @@ class _BottomNaviControllerState extends State<BottomNaviController> {
               'Tennist',
             ),
           ),
-          BottomNavigationBarItem(
-            icon: new Image.asset(
-              'assets/images/tabbar/tennis-unselected.png',
-              scale: 1.7,
-            ),
-            activeIcon: new Image.asset(
-              'assets/images/tabbar/tennis-selected.png',
-              scale: 1.7,
-            ),
-            title: Text(
-              'Racket',
-            ),
-          ),
+          // BottomNavigationBarItem(
+          //   icon: new Image.asset(
+          //     'assets/images/tabbar/tennis-unselected.png',
+          //     scale: 1.7,
+          //   ),
+          //   activeIcon: new Image.asset(
+          //     'assets/images/tabbar/tennis-selected.png',
+          //     scale: 1.7,
+          //   ),
+          //   title: Text(
+          //     'Racket',
+          //   ),
+          // ),
           BottomNavigationBarItem(
             icon: new Image.asset(
               'assets/images/tabbar/account-unselected.png',

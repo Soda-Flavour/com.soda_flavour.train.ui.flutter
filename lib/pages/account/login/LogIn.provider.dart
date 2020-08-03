@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:tennist_flutter/pages/account/signup/SignUp.model.dart';
+import 'package:tennist_flutter/pages/account/login/LogIn.model.dart';
 import 'package:tennist_flutter/src/helper/AppConfig.dart';
+import 'package:tennist_flutter/src/helper/AuthHelper.dart';
 import 'package:tennist_flutter/src/model/AppError.model.dart';
 import 'package:tennist_flutter/src/model/Error.model.dart';
 
-class SignUpProvider with ChangeNotifier {
+class LogInProvider with ChangeNotifier {
   AppConfig _appConfig;
   AppConfig get appConfig => _appConfig;
 
@@ -17,19 +18,24 @@ class SignUpProvider with ChangeNotifier {
     }
   }
 
-  Future<dynamic> signUp(data) async {
+  Future<dynamic> logIn(data) async {
     try {
       Map<String, String> headers = {
         "Content-Type": "application/json",
       };
-      final String url = 'http://localhost:3000/api/v1/auth/signup';
+      final String url = 'http://localhost:3000/api/v1/auth/login';
       // final String url = '${appConfig.baseUrl}/signup';
 
       final http.Response response =
           await http.post(url, headers: headers, body: json.encode(data));
 
       if (response.statusCode == 200) {
-        final resultModel = signUpModelFromJson(response.body);
+        final resultModel = logInModelFromJson(response.body);
+
+        var result = resultModel.result;
+
+        await AuthHelper.saveLoginToken(
+            result.data.accessT, result.data.refreshT);
 
         return resultModel.result;
       }

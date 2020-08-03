@@ -23,6 +23,32 @@ class AuthHelper {
     return true;
   }
 
+  static Future<void> saveLoginToken(String accessT, String refreshT) async {
+    try {
+      await saveAccessToken(accessT);
+      await saveRefreshToken(refreshT);
+    } catch (e) {
+      print(e);
+      throw e;
+    }
+  }
+
+  static Future<void> saveAccessToken(String accessT) async {
+    try {
+      await StorageHelper.writeStorage('access_token', accessT);
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  static Future<void> saveRefreshToken(String refreshT) async {
+    try {
+      await StorageHelper.writeStorage('refresh_token', refreshT);
+    } catch (e) {
+      throw e;
+    }
+  }
+
   static Future<String> getAccessToken() async {
     return await StorageHelper.readStorage('access_token');
   }
