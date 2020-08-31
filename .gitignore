@@ -55,7 +55,7 @@ linked_*.ds
 unlinked.ds
 unlinked_spec.ds
 
-lib/pages/tab_2/
+**/tab_2/
 
 # Android related
 **/android/**/gradle-wrapper.jar
