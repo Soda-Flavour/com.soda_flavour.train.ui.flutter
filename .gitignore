@@ -115,5 +115,5 @@ app.*.symbols
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
 
-lib/pages/tab_1/
-lib/pages/tab_2/
+/lib/pages/tab_1/
+/lib/pages/tab_2/
