@@ -1,6 +1,6 @@
 # tennist_flutter
 
-For tennist flutter!!!
+### -이 프로젝트는 작업 공개용 프로젝트이며, 이후의 작업은 비공개로 진행되고 있습니다.-
 
 ## App Screen
 
