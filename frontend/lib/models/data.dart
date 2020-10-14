@@ -7,36 +7,31 @@ class Data {
   static final User lukas = User(
       id: 213921840,
       name: 'Lukas',
-      imageUrl:
-          'https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+      imageUrl: 'https://thispersondoesnotexist.com/image',
       message: 'Hello World!');
 
   static final User tom = User(
       id: 213921841,
-      name: 'Tom',
-      imageUrl:
-          'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+      name: '김진영 상담사',
+      imageUrl: 'https://water-flavour.com/public/image/repo/face_1.png',
       message: 'Hello World!');
 
   static final User neo = User(
       id: 213921842,
-      name: "Neo",
-      imageUrl:
-          'https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
+      name: "이현영 상담사",
+      imageUrl: 'https://water-flavour.com/public/image/repo/face_2.png',
       message: 'Good Day!');
 
   static final User bird = User(
       id: 213921843,
-      name: "Bird",
-      imageUrl:
-          'https://images.unsplash.com/photo-1522778147829-047360bdc7f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80',
+      name: "안지희 상담사",
+      imageUrl: 'https://water-flavour.com/public/image/repo/face_3.png',
       message: 'Cheep Cheep!');
 
   static final User dog = User(
       id: 213921844,
-      name: "Dog",
-      imageUrl:
-          'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=339&q=80',
+      name: "고하연 상담사",
+      imageUrl: 'https://water-flavour.com/public/image/repo/face_4.png',
       message: 'Bark Bark');
 
   static final User me = lukas;
@@ -52,56 +47,55 @@ class Data {
     Message(
       sender: lukas,
       time: '17:00',
-      text: 'blah blah blah blah?',
+      text: '상담사님 들어오셨나요??',
       unread: false,
     ),
     Message(
       sender: tom,
       time: '17:01',
-      text: 'blah?',
+      text: '네 안녕하세요 김진영상담사입니다.',
       unread: false,
     ),
     Message(
       sender: tom,
       time: '17:01',
-      text: 'blah ...',
+      text: '연결에 조금 문제가 있었네요~!',
       unread: false,
     ),
     Message(
       sender: tom,
       time: '17:01',
-      text: 'blah blah blah blah blah\n blah blah?',
+      text: '상담을 시작해볼까요?\n 어떤고민이 있으신가요?',
       unread: false,
     ),
     Message(
       sender: lukas,
       time: '17:05',
-      text: 'blah!!',
+      text: '요즘 무기력하고 힘이 없어요..',
       unread: false,
     ),
     Message(
       sender: tom,
       time: '17:06',
-      text:
-          'blah blah blah blahblahblahblahblahblah blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah',
+      text: '아 그러시군요.. 어떤 일이 있었나요?',
       unread: false,
     ),
     Message(
       sender: lukas,
       time: '17:07',
-      text: '...',
+      text: '잘 모르겠어요',
       unread: false,
     ),
     Message(
       sender: tom,
       time: '17:08',
-      text: 'blah?',
+      text: '네 그렇군요 그럼 지금부터 몇가지 질문을 해볼께요~!',
       unread: false,
     ),
     Message(
       sender: lukas,
       time: '17:09',
-      text: 'blah!! blah :)',
+      text: '네 좋아요',
       unread: false,
     ),
   ];
@@ -110,13 +104,13 @@ class Data {
     Message(
       sender: neo,
       time: '17:30',
-      text: 'Hey, how\'s it going? What did you do today?',
+      text: '안녕하세요 이현영 상담사 입니다.',
       unread: false,
     ),
     Message(
       sender: lukas,
       time: '17:31',
-      text: 'Hey~',
+      text: '안녕하세요.',
       unread: true,
     ),
   ];
@@ -125,19 +119,19 @@ class Data {
     Message(
       sender: bird,
       time: '17:30',
-      text: 'cheep cheep~',
+      text: '안녕하세요 안지희 상담사 입니다.',
       unread: false,
     ),
     Message(
       sender: bird,
       time: '17:31',
-      text: 'cheep cheep!!',
+      text: '요즘 어떤 고민이 있으신가요?',
       unread: false,
     ),
     Message(
       sender: bird,
-      time: '17:32',
-      text: 'cheep :(',
+      time: '18:32',
+      text: '1시간이 경과하여 상담을 종료할께요~!',
       unread: false,
     ),
   ];
@@ -146,13 +140,13 @@ class Data {
     Message(
       sender: dog,
       time: '17:55',
-      text: 'bark bark!',
+      text: '안녕하세요 김지연님 고하연 상담사입니다.',
       unread: false,
     ),
     Message(
       sender: me,
       time: '17:56',
-      text: 'what?',
+      text: '안녕하세요~!',
       unread: false,
     ),
   ];
@@ -170,8 +164,7 @@ class Data {
     Feed(
       sender: neo,
       message: 'Photo by Alex Iby on Unsplash',
-      imageUrl:
-          'https://images.unsplash.com/photo-1507503343980-19961fa0ca17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
+      imageUrl: 'https://thispersondoesnotexist.com/image',
       time: '5',
       shareCount: 10,
       likeCount: 5,

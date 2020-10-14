@@ -13,7 +13,7 @@ class ChatRoomListItem extends StatelessWidget {
       child: Row(
         children: <Widget>[
           CircleAvatar(
-            backgroundImage: NetworkImage(chatRoom.sender.imageUrl),
+            backgroundImage: NetworkImage(chatRoom.sender.imageUrl, scale: 1),
             radius: 30.0,
           ),
           SizedBox(

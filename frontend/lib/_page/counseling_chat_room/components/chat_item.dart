@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/models/data.dart';
 import 'package:frontend/models/message_model.dart';
-import 'package:frontend/screens/chat_room/chat_bubble.dart';
+import 'package:frontend/pages/counseling_chat_room/components/chat_bubble.dart';
 
 class ChatItem extends StatelessWidget {
   final Message message;

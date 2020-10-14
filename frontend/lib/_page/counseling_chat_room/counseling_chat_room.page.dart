@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:frontend/models/chat_room_model.dart';
 import 'package:frontend/models/data.dart';
 import 'package:frontend/models/message_model.dart';
-import 'package:frontend/screens/chat_room/chat_input.dart';
-import 'package:frontend/screens/chat_room/chat_item.dart';
+import 'package:frontend/pages/counseling_chat_room/components/chat_input.dart';
+import 'package:frontend/pages/counseling_chat_room/components/chat_item.dart';
+
 import 'package:frontend/utils/constants.dart';
 
-class ChatRoomScreen extends StatefulWidget {
+class CounselingChatRoomPage extends StatefulWidget {
   @override
-  _ChatRoomScreenState createState() => _ChatRoomScreenState();
+  _CounselingChatRoomPageState createState() => _CounselingChatRoomPageState();
 }
 
-class _ChatRoomScreenState extends State<ChatRoomScreen> {
+class _CounselingChatRoomPageState extends State<CounselingChatRoomPage> {
   @override
   Widget build(BuildContext context) {
     ChatRoom chatRoom = ModalRoute.of(context).settings.arguments;

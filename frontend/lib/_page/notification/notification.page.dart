@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/models/data.dart';
-import 'package:frontend/screens/notification/feed_bubble.dart';
+import 'package:frontend/pages/notification/components/feed_bubble.comp.dart';
+
 import 'package:frontend/utils/constants.dart';
 
-class NotificationScreen extends StatelessWidget {
+class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         centerTitle: false,
-        title: Text(
-          'Notification',
-          style: Constants.titleStyle,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: Text(
+            '알림',
+            style: Constants.titleStyle,
+          ),
         ),
       ),
       body: Container(

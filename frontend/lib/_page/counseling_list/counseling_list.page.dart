@@ -1,29 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/models/data.dart';
-import 'package:frontend/screens/chat/chat_room_list_ltem.dart';
-import 'package:frontend/utils/constants.dart';
+import 'package:frontend/pages/counseling_chat_room/counseling_chat_room.page.dart';
+import 'package:frontend/pages/counseling_list/components/chat_room_list_ltem.dart';
 
-class ChatScreen extends StatelessWidget {
+import 'package:frontend/utils/constants.dart';
+import 'package:get/get.dart';
+
+class CounselingListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         centerTitle: false,
         elevation: 0.0,
-        title: Text(
-          'Chat',
-          style: Constants.titleStyle,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: Text(
+            '나의 상담',
+            style: Constants.titleStyle,
+          ),
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add_circle_outline),
-            color: Colors.white,
-            iconSize: 30.0,
-            onPressed: () {},
-          )
-        ],
+        // actions: <Widget>[
+        //   IconButton(
+        //     icon: Icon(Icons.add_circle_outline),
+        //     color: Colors.white,
+        //     iconSize: 30.0,
+        //     onPressed: () {},
+        //   )
+        // ],
       ),
       body: Container(
         padding: const EdgeInsets.only(top: 90),
@@ -46,6 +53,8 @@ class ChatScreen extends StatelessWidget {
                   autofocus: false,
                   onChanged: (v) {},
                   decoration: InputDecoration(
+                    contentPadding: new EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 10.0),
                     focusColor: Colors.white,
                     prefixIcon: Icon(
                       Icons.search,
@@ -72,7 +81,7 @@ class ChatScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/chatRoom',
+                          Get.to(CounselingChatRoomPage(),
                               arguments: Data.chatRooms[index]);
                         },
                         child: ChatRoomListItem(
