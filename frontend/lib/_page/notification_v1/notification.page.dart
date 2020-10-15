@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/_page/notification_v1/components/feed_bubble.comp.dart';
 import 'package:frontend/models/data.dart';
-import 'package:frontend/pages/notification/components/feed_bubble.comp.dart';
 
 import 'package:frontend/utils/constants.dart';
 

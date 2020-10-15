@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/teacher_detail/teacher_detail.page.dart';
 import 'package:frontend/pages/teacher_list/components/checking_account_card.dart';
 import 'package:frontend/pages/teacher_list/components/main_ad_card.dart';
 import 'package:frontend/pages/teacher_list/components/main_app_bar.dart';
 import 'package:frontend/pages/teacher_list/components/more_button.dart';
 import 'package:frontend/pages/teacher_list/components/savings_account_card.dart';
 import 'package:frontend/pages/teacher_list/components/teacher_item.comp.dart';
+import 'package:get/get.dart';
 
 class TeacherListPage extends StatelessWidget {
   @override
@@ -37,7 +39,12 @@ class TeacherListPage extends StatelessWidget {
                       content: "예약 없이 실시간 상담 가능! 지금 신청하기!",
                     ),
                     SizedBox(height: 15),
-                    TeacherItemComp(),
+                    GestureDetector(
+                      child: TeacherItemComp(),
+                      onTap: () {
+                        Get.to(TeacherDetailPage());
+                      },
+                    ),
                     SizedBox(height: 15),
                     TeacherItemComp(),
                     SizedBox(height: 15),
