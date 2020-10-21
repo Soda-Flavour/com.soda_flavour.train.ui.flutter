@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_Info.comp.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_account_card.comp.dart';
+import 'package:frontend/pages/select_product/select_product.page.dart';
+import 'package:frontend/pages/teacher_detail/components/tabs_item/reservation_info/teacher_detail_tab_reservation_info.comp.dart';
+import 'package:frontend/pages/teacher_detail/components/tabs_item/review/teacher_detail_tab_review.comp.dart';
+import 'package:frontend/pages/teacher_detail/components/tabs_item/teacher_info/teacher_detail_tab_teacher_info.comp.dart';
 import 'package:frontend/pages/teacher_detail/components/teacher_detail_app_bar.comp.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_career.comp.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_loan_card.comp.dart';
 import 'package:frontend/pages/teacher_detail/components/teacher_detail_main_info.comp.dart';
 import 'package:frontend/pages/teacher_detail/components/teacher_detail_main_review.comp.dart';
 import 'package:frontend/pages/teacher_detail/components/teacher_detail_tab_bar.comp.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_you_tube_player.comp.dart';
+import 'package:get/get.dart';
 
 class TeacherDetailPage extends StatefulWidget {
   const TeacherDetailPage({Key key}) : super(key: key);
@@ -63,63 +63,79 @@ class _TeacherDetailPageState extends State<TeacherDetailPage>
             constraints: BoxConstraints(
               maxWidth: 632,
             ),
-            child: CustomScrollView(
+            child: NestedScrollView(
               key: PageStorageKey<String>("teacher_detail"),
               controller: _scrollController,
-              slivers: [
-                SliverAppBar(
-                  titleSpacing: 10,
-                  title: TeacherDetailAppBarComp(),
-                  backgroundColor: Colors.white,
-                  leading: BackButton(
-                    color: Colors.black,
-                  ),
-                  automaticallyImplyLeading: true,
-                  elevation: 0.0,
-                  pinned: true,
-                ),
-                SliverToBoxAdapter(
-                  child: TeacherDetailMainInfoComp(),
-                ),
-                SliverToBoxAdapter(
-                  child: TeacherDetailMainReviewComp(),
-                ),
-                SliverAppBar(
-                  titleSpacing: 0,
-                  title: TeacherDetailTabBarComp(
-                    tabController: _tabController,
-                    onTap: _onTabToScroll,
-                  ),
-                  backgroundColor: Colors.white,
-                  automaticallyImplyLeading: false,
-                  elevation: 0.0,
-                  pinned: true,
-                ),
-                SliverList(
-                  delegate: SliverChildListDelegate.fixed([
-                    TeacherDetailYouTubePlayerComp(),
-                    TeacherDetailInfoComp(
-                      key: infoKey,
+              headerSliverBuilder: (BuildContext context, bool boxIsScrolled) {
+                return <Widget>[
+                  SliverAppBar(
+                    titleSpacing: 10,
+                    title: TeacherDetailAppBarComp(),
+                    backgroundColor: Colors.white,
+                    leading: BackButton(
+                      color: Colors.black,
                     ),
-                    TeacherDetailCareerComp(),
-                    // TeacherDetailAccountCardcomp(
-                    //   key: accountKey,
-                    // ),
-                    // TeacherDetailLoanCardComp(
-                    //   key: loanKey,
-                    // ),
-                    // TeacherDetailServiceCardComp(
-                    //   key: serviceKey,
-                    // ),
-                    // TeacherDetailAllianceCardComp(
-                    //   key: allianceKey,
-                    // ),
-                  ]),
-                )
-              ],
+                    automaticallyImplyLeading: true,
+                    elevation: 0.0,
+                    pinned: true,
+                  ),
+                  SliverToBoxAdapter(
+                    child: TeacherDetailMainInfoComp(),
+                  ),
+                  SliverToBoxAdapter(
+                    child: TeacherDetailMainReviewComp(),
+                  ),
+                  SliverAppBar(
+                    titleSpacing: 0,
+                    title: TeacherDetailTabBarComp(
+                      tabController: _tabController,
+                      // onTap: _onTabToScroll,
+                    ),
+                    backgroundColor: Colors.white,
+                    automaticallyImplyLeading: false,
+                    elevation: 0.0,
+                    pinned: true,
+                  ),
+                ];
+              },
+              body: TabBarView(
+                physics: NeverScrollableScrollPhysics(),
+                controller: _tabController,
+                children: <Widget>[
+                  TeacherDetailTabTeacherInfoComp(),
+                  TeacherDetailTabReservationInfoComp(),
+                  TeacherDetailTabReviewComp(),
+                ],
+              ),
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: SafeArea(
+        child: Container(
+            height: 70,
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(
+                  color: Colors.grey[300],
+                  width: 2.0,
+                ),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12.0,
+                vertical: 8.0,
+              ),
+              child: Container(
+                child: RaisedButton(
+                  child: Text('추천 상담권 보기', style: TextStyle(fontSize: 24)),
+                  color: Color(0xFF058DFC),
+                  onPressed: () => Get.to(SelectProductPage()),
+                  textColor: Colors.white,
+                ),
+              ),
+            )),
       ),
     );
   }

@@ -8,7 +8,7 @@ class CounselingAppBarComp extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            '알림',
+            '나의상담',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.black,

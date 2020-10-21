@@ -147,7 +147,7 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                           onPressed: () async {
-                            Get.to(MainBottomNavigatorPage(),
+                            Get.offAll(MainBottomNavigatorPage(),
                                 transition: Transition.downToUp);
                             Get.snackbar(
                               "TODO",

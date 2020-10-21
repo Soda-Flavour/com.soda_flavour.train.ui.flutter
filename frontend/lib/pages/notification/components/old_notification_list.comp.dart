@@ -10,7 +10,7 @@ class OldNotificationListComp extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Previous Notice',
+            '확인한 알림',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.black,
@@ -21,31 +21,28 @@ class OldNotificationListComp extends StatelessWidget {
             height: 20,
           ),
           NotificationItemComp(
-            title: 'Credit Information Change Notice',
-            content:
-                "There is a change in credit information. Please check your credit card and debit card registration information.",
+            title: '상담 종료',
+            content: "모든 상담회차가 종료되었습니다. 상담사님 리뷰를 작성해주세요.",
             icon: Icons.notifications_active_outlined,
-            date: '8th October 2020',
+            date: '2020.10.13',
           ),
           SizedBox(
             height: 20,
           ),
           NotificationItemComp(
-            title: 'Credit Information Change Notice',
-            content:
-                "There is a change in credit information. Please check your credit card and debit card registration information.",
+            title: '결제 알림',
+            content: "20회 상품권 결제가 완료되었습니다.",
             icon: Icons.add_alert,
-            date: '2th October 2020',
+            date: '2020.10.10',
           ),
           SizedBox(
             height: 20,
           ),
           NotificationItemComp(
-            title: 'Credit Information Change Notice',
-            content:
-                "There is a change in credit information. Please check your credit card and debit card registration information.",
+            title: '상담알림',
+            content: "김하연 상담사님과 함께하는 상담이 오늘 있습니다.",
             icon: Icons.notifications_active_outlined,
-            date: '1th October 2020',
+            date: '2020.10.10',
           ),
         ],
       ),

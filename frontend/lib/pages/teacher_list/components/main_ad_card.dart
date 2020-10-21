@@ -11,7 +11,7 @@ class MainAdCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
+        color: Colors.cyan,
       ),
       height: 70,
       child: Padding(
@@ -25,6 +25,7 @@ class MainAdCard extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
+                    color: Colors.black,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -34,6 +35,7 @@ class MainAdCard extends StatelessWidget {
                 Text(
                   content,
                   style: TextStyle(
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

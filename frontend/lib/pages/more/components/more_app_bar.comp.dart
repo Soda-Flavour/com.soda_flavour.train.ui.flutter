@@ -11,17 +11,17 @@ class MoreAppBar extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Puzzleleaf',
+                '나무나무님',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   fontSize: 20,
                 ),
               ),
-              Icon(
-                Icons.keyboard_arrow_right,
-                color: Colors.black.withOpacity(0.4),
-              ),
+              // Icon(
+              //   Icons.keyboard_arrow_right,
+              //   color: Colors.black.withOpacity(0.4),
+              // ),
             ],
           ),
           Container(

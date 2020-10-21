@@ -31,12 +31,26 @@ class ChatRoomListItem extends StatelessWidget {
                     fontSize: 16.0,
                   ),
                 ),
-                Text(
-                  chatRoom.messages.last.text,
-                  maxLines: 2,
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.notification_important,
+                      size: 20,
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Flexible(
+                      child: Text(
+                        chatRoom.type,
+                        maxLines: 2,
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ],
                 )
               ],
             ),

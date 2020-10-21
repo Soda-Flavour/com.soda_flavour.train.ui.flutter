@@ -37,10 +37,10 @@ class Data {
   static final User me = lukas;
 
   static List<ChatRoom> chatRooms = [
-    ChatRoom(sender: dog, messages: chat4),
-    ChatRoom(sender: bird, messages: chat3),
-    ChatRoom(sender: neo, messages: chat2),
-    ChatRoom(sender: tom, messages: chat1),
+    ChatRoom(sender: dog, messages: chat4, type: "상담일정을 정해주세요"),
+    ChatRoom(sender: bird, messages: chat3, type: "예약상담 시간이 5시간 남았습니다."),
+    ChatRoom(sender: neo, messages: chat2, type: "예약상담 시간이 1일 3시간 남앗습니다."),
+    ChatRoom(sender: tom, messages: chat1, type: "모든 상담이 종료되었습니다."),
   ];
 
   static List<Message> chat1 = [

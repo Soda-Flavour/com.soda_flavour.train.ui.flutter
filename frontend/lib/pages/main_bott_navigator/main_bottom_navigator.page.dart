@@ -8,10 +8,19 @@ import 'package:frontend/pages/notification/notification.page.dart';
 import 'package:frontend/pages/teacher_list/teacher_list.page.dart';
 
 class MainBottomNavigatorPage extends StatelessWidget {
+  int initPage;
+
+  MainBottomNavigatorPage({int initPage = 0}) {
+    this.initPage = initPage;
+  }
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MainBottomNavigatorCubit, int>(
       builder: (_, state) {
+        if (initPage != 0) {
+          state = 1;
+          initPage = 0;
+        }
         return WillPopScope(
           child: Scaffold(
             bottomNavigationBar: BottomNavigationBar(

@@ -11,7 +11,7 @@ class MainAppBar extends StatelessWidget {
             '상담사 찾기',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 20,
             ),
           ),

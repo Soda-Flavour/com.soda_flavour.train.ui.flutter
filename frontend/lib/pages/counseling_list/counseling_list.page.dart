@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/models/data.dart';
 import 'package:frontend/pages/counseling_chat_room/counseling_chat_room.page.dart';
+import 'package:frontend/pages/counseling_detail/counseling_detail.page.dart';
 import 'package:frontend/pages/counseling_list/components/chat_room_list_ltem.dart';
 import 'package:frontend/pages/counseling_list/components/counseling_app_bar.comp.dart';
 
@@ -35,7 +36,7 @@ class CounselingListPage extends StatelessWidget {
                   delegate: SliverChildBuilderDelegate((context, index) {
                     return GestureDetector(
                       onTap: () {
-                        Get.to(CounselingChatRoomPage(),
+                        Get.to(CounselingDetailPage(),
                             arguments: Data.chatRooms[index]);
                       },
                       child: ChatRoomListItem(

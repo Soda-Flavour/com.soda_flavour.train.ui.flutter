@@ -12,7 +12,8 @@ class TeacherListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff343B57),
+      // backgroundColor: Color(0xff343B57),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
           alignment: Alignment.topCenter,
@@ -27,7 +28,7 @@ class TeacherListPage extends StatelessWidget {
                 SliverAppBar(
                   titleSpacing: 10,
                   title: MainAppBar(),
-                  backgroundColor: Color(0xff343B57),
+                  backgroundColor: Colors.white,
                   automaticallyImplyLeading: false,
                   pinned: true,
                 ),

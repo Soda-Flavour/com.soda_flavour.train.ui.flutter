@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_account_card.comp.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_ad_card.comp.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_alliance_card.comp.dart';
+import 'package:frontend/pages/select_product/select_product.page.dart';
+import 'package:frontend/pages/teacher_detail/components/tabs_item/reservation_info/teacher_detail_tab_reservation_info.comp.dart';
+import 'package:frontend/pages/teacher_detail/components/tabs_item/review/teacher_detail_tab_review.comp.dart';
+import 'package:frontend/pages/teacher_detail/components/tabs_item/teacher_info/teacher_detail_tab_teacher_info.comp.dart';
 import 'package:frontend/pages/teacher_detail/components/teacher_detail_app_bar.comp.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_loan_card.comp.dart';
-import 'package:frontend/pages/teacher_detail/components/teacher_detail_service_card.comp.dart';
+import 'package:frontend/pages/teacher_detail/components/teacher_detail_main_info.comp.dart';
+import 'package:frontend/pages/teacher_detail/components/teacher_detail_main_review.comp.dart';
 import 'package:frontend/pages/teacher_detail/components/teacher_detail_tab_bar.comp.dart';
+import 'package:get/get.dart';
 
 class TeacherDetailPage extends StatefulWidget {
   const TeacherDetailPage({Key key}) : super(key: key);
@@ -19,23 +21,23 @@ class _TeacherDetailPageState extends State<TeacherDetailPage>
   TabController _tabController;
   ScrollController _scrollController;
 
-  final adKey = new GlobalKey();
+  final infoKey = new GlobalKey();
   final accountKey = new GlobalKey();
   final loanKey = new GlobalKey();
-  final serviceKey = new GlobalKey();
-  final allianceKey = new GlobalKey();
+  // final serviceKey = new GlobalKey();
+  // final allianceKey = new GlobalKey();
 
   double adHeight = 0;
   double accountHeight = 0;
   double loanHeight = 0;
-  double serviceHeight = 0;
-  double allianceHeight = 0;
+  // double serviceHeight = 0;
+  // double allianceHeight = 0;
   bool isTabToScroll = false;
 
   @override
   void initState() {
     _scrollController = ScrollController();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
     _scrollController.addListener(() {
       _onScroll();
     });
@@ -69,44 +71,72 @@ class _TeacherDetailPageState extends State<TeacherDetailPage>
                   titleSpacing: 10,
                   title: TeacherDetailAppBarComp(),
                   backgroundColor: Colors.white,
+                  leading: BackButton(
+                    color: Colors.black,
+                  ),
                   automaticallyImplyLeading: true,
                   elevation: 0.0,
                   pinned: true,
+                ),
+                SliverToBoxAdapter(
+                  child: TeacherDetailMainInfoComp(),
+                ),
+                SliverToBoxAdapter(
+                  child: TeacherDetailMainReviewComp(),
                 ),
                 SliverAppBar(
                   titleSpacing: 0,
                   title: TeacherDetailTabBarComp(
                     tabController: _tabController,
-                    onTap: _onTabToScroll,
+                    // onTap: _onTabToScroll,
                   ),
                   backgroundColor: Colors.white,
                   automaticallyImplyLeading: false,
                   elevation: 0.0,
                   pinned: true,
                 ),
-                SliverList(
-                  delegate: SliverChildListDelegate.fixed([
-                    TeacherDetailAdCardComp(
-                      key: adKey,
-                    ),
-                    TeacherDetailAccountCardcomp(
-                      key: accountKey,
-                    ),
-                    TeacherDetailLoanCardComp(
-                      key: loanKey,
-                    ),
-                    TeacherDetailServiceCardComp(
-                      key: serviceKey,
-                    ),
-                    TeacherDetailAllianceCardComp(
-                      key: allianceKey,
-                    ),
-                  ]),
-                )
+                new SliverFillRemaining(
+                  hasScrollBody: true,
+                  child: TabBarView(
+                    physics: NeverScrollableScrollPhysics(),
+                    controller: _tabController,
+                    children: <Widget>[
+                      TeacherDetailTabTeacherInfoComp(),
+                      TeacherDetailTabReservationInfoComp(),
+                      TeacherDetailTabReviewComp(),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: SafeArea(
+        child: Container(
+            height: 70,
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(
+                  color: Colors.grey[300],
+                  width: 2.0,
+                ),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12.0,
+                vertical: 8.0,
+              ),
+              child: Container(
+                child: RaisedButton(
+                  child: Text('추천 상담권 보기', style: TextStyle(fontSize: 24)),
+                  color: Color(0xFF058DFC),
+                  onPressed: () => Get.to(SelectProductPage()),
+                  textColor: Colors.white,
+                ),
+              ),
+            )),
       ),
     );
   }
@@ -114,8 +144,8 @@ class _TeacherDetailPageState extends State<TeacherDetailPage>
   void _onScroll() {
     if (isTabToScroll) return;
 
-    if (adKey.currentContext != null) {
-      adHeight = adKey.currentContext.size.height;
+    if (infoKey.currentContext != null) {
+      adHeight = infoKey.currentContext.size.height;
     }
     if (accountKey.currentContext != null) {
       accountHeight = accountKey.currentContext.size.height;
@@ -123,12 +153,12 @@ class _TeacherDetailPageState extends State<TeacherDetailPage>
     if (loanKey.currentContext != null) {
       loanHeight = loanKey.currentContext.size.height;
     }
-    if (serviceKey.currentContext != null) {
-      serviceHeight = serviceKey.currentContext.size.height;
-    }
-    if (allianceKey.currentContext != null) {
-      allianceHeight = allianceKey.currentContext.size.height;
-    }
+    // if (serviceKey.currentContext != null) {
+    //   serviceHeight = serviceKey.currentContext.size.height;
+    // }
+    // if (allianceKey.currentContext != null) {
+    //   allianceHeight = allianceKey.currentContext.size.height;
+    // }
 
     if (_scrollController.offset <= adHeight) {
       _tabController.animateTo(0,
@@ -139,25 +169,19 @@ class _TeacherDetailPageState extends State<TeacherDetailPage>
           duration: const Duration(milliseconds: 0), curve: Curves.linear);
     } else if (_scrollController.offset > adHeight + accountHeight &&
         _scrollController.offset <= adHeight + accountHeight + loanHeight) {
-      _tabController.animateTo(2,
-          duration: const Duration(milliseconds: 0), curve: Curves.linear);
-    } else if (_scrollController.offset >
-            adHeight + accountHeight + serviceHeight &&
-        _scrollController.offset <=
-            adHeight + accountHeight + loanHeight + serviceHeight) {
       if (_scrollController.offset >=
           _scrollController.position.maxScrollExtent) {
-        _tabController.animateTo(4,
+        _tabController.animateTo(2,
             duration: const Duration(milliseconds: 0), curve: Curves.linear);
       } else {
-        _tabController.animateTo(3,
+        _tabController.animateTo(1,
             duration: const Duration(milliseconds: 0), curve: Curves.linear);
       }
     }
   }
 
   void _onTabToScroll(int index) async {
-    var keys = [adKey, accountKey, loanKey, serviceKey, allianceKey];
+    var keys = [infoKey, accountKey, loanKey];
     var previousIndex = _tabController.previousIndex;
 
     isTabToScroll = true;

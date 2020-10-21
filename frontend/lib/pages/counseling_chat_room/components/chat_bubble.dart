@@ -25,27 +25,27 @@ class ChatBubble extends StatelessWidget {
             borderRadius: isMe
                 ? isContinue
                     ? BorderRadius.only(
-                        topRight: Radius.circular(20.0),
-                        topLeft: Radius.circular(20.0),
-                        bottomLeft: Radius.circular(20.0),
-                        bottomRight: Radius.circular(20.0),
+                        topRight: Radius.circular(15.0),
+                        topLeft: Radius.circular(15.0),
+                        bottomLeft: Radius.circular(15.0),
+                        bottomRight: Radius.circular(15.0),
                       )
                     : BorderRadius.only(
-                        topRight: Radius.circular(20.0),
-                        topLeft: Radius.circular(20.0),
-                        bottomLeft: Radius.circular(20.0),
+                        topRight: Radius.circular(15.0),
+                        topLeft: Radius.circular(15.0),
+                        bottomLeft: Radius.circular(15.0),
                       )
                 : isContinue
                     ? BorderRadius.only(
-                        topRight: Radius.circular(20.0),
-                        topLeft: Radius.circular(20.0),
-                        bottomLeft: Radius.circular(20.0),
-                        bottomRight: Radius.circular(20.0),
+                        topRight: Radius.circular(15.0),
+                        topLeft: Radius.circular(15.0),
+                        bottomLeft: Radius.circular(15.0),
+                        bottomRight: Radius.circular(15.0),
                       )
                     : BorderRadius.only(
-                        topRight: Radius.circular(20.0),
-                        topLeft: Radius.circular(20.0),
-                        bottomRight: Radius.circular(20.0),
+                        topRight: Radius.circular(15.0),
+                        topLeft: Radius.circular(15.0),
+                        bottomRight: Radius.circular(15.0),
                       ),
           ),
           constraints: BoxConstraints(
