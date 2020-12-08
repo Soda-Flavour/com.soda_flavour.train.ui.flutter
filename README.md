@@ -34,6 +34,7 @@
 
 ### 3.라켓 관리
 
+<p float="left">
 <img src="https://user-images.githubusercontent.com/19925297/89199514-a0cb5d80-d5e9-11ea-8a86-68c66dc8233b.png" width="200" />
 <img src="https://user-images.githubusercontent.com/19925297/89199535-a9239880-d5e9-11ea-92e2-d93daf30deb2.png" width="200" />
 <img src="https://user-images.githubusercontent.com/19925297/89199544-ab85f280-d5e9-11ea-8a9e-80fc077a7f7c.png" width="200" />
@@ -41,7 +42,7 @@
 <img src="https://user-images.githubusercontent.com/19925297/89199561-b17bd380-d5e9-11ea-9726-9ce53de8aa9d.png" width="200" />
 <img src="https://user-images.githubusercontent.com/19925297/89199577-b6408780-d5e9-11ea-82be-6607dd33cc94.png" width="200" />
 <img src="https://user-images.githubusercontent.com/19925297/89199585-b9d40e80-d5e9-11ea-9d66-4872fc8ab64d.png" width="200" />
-
+</p>
 ### 4.로그인 회원가입
 
 <p float="left">
