@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:vibe_clone/controller/BottomNav.ctrl.dart';
 import 'package:vibe_clone/pages/chart/Chart.page.dart';
 import 'package:vibe_clone/pages/dashboard/Dashboard.page.dart';
+import 'package:vibe_clone/pages/dashboard/blank.page.dart';
 import 'package:vibe_clone/pages/search/Search.page.dart';
 import 'package:vibe_clone/pages/storage/Storage.page.dart';
 import 'package:vibe_clone/pages/video/Video.page.dart';
@@ -12,7 +13,7 @@ class BottomNavPage extends StatelessWidget {
   double iconSize = 35.0;
 
   List<Widget> mainPages = [
-    DashboardPage(),
+    BlankPage(),
     ChartPage(),
     VideoPage(),
     SearchPage(),
