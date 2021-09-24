@@ -1,6 +1,6 @@
 # vibe_clone
 
-A new Flutter project.
+A train Flutter project.
 
 ## Getting Started
 
